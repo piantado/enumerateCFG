@@ -1,13 +1,6 @@
-
-## Should be unique -- look at 120 adn 48?
-
 from IntegerizedStack import *
 from Utility import *
 from Node import *
-
-## We will store a CFG as a dictionary from NTs to other NTs
-# anything not in keys is assumed to be a terminal.
-
 
 def from_int(nt, n, cfg):
     # provide the n'th expansion of nonterminal nt
@@ -44,7 +37,6 @@ def from_int(nt, n, cfg):
                 children.append(Node(r))
         return Node(nt, children)
 
-# print(from_int("S", 0))
 if __name__ == "__main__":
 
     ## NOTE: that in cfg, the terminal rules must be ordered first
@@ -58,13 +50,11 @@ if __name__ == "__main__":
         "PP": [("p", "NP"), ],
         "VP": [("v",), ("v", "NP"), ("v", "S"), ("VP", "PP")]
     }
-
     # cfg = {
     #     "BOOL":   [("<", "NUMBER", "NUMBER"), ("=", "NUMBER", "NUMBER"), ("FORALL", "VAR", "BOOL"), ("NOT", "BOOL"), ("OR", "BOOL", "BOOL")],
     #     "NUMBER": [("0",), ("VAR",), ("S", "NUMBER"), ("+", "NUMBER", "NUMBER"), ("*", "NUMBER", "NUMBER")],
     #     "VAR":    [("x",), ("VAR", "*")]
     # }
-
     # cfg = {
     #     "S": [("a", "b"), ("a", "S", "b")]
     # }

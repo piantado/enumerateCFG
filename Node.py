@@ -1,6 +1,8 @@
-
-
 class Node:
+    # This class just wraps together a nonterminal symbol (nt) and
+    # a list of children (nodes or strings). It also stores self.complete
+    # which is useful in LZEnumerate to prevent copying partial subtrees
+
     def __init__(self, nt, children=None):
         self.nt = nt
         self.children = [] if children is None else children

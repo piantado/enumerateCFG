@@ -11,6 +11,7 @@ if __name__ == "__main__":
 
         for m in range(1, 25):
             x, y = mod_decode(i,m)
-            assert (i == mod_encode(x, y, m))
+            # print(i,m, mod_decode(i,m), mod_encode(y,x,m))
+            assert (i == mod_encode(y, x, m))
 
     print("Encoding and decoding test complete.")
